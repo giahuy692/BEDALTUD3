@@ -4,6 +4,6 @@ const router = express.Router();
 
 const siteController = require('../app/controllers/SiteController');
 
-router.get('/GetListProduct', siteController.GetListProduct);
+router.post('/GetListProduct', siteController.GetListProduct);
 
 module.exports = router;
