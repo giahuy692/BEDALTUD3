@@ -1,0 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background-color: #00b3a0 !important;
+}
+
+.w_100bosen {
+  width: 100%;
+  max-width: 100%;
+}
+
+.border_right {
+  border-right: 1px solid #00b3a0;
+}
+
+.my_con {
+  width: 28% !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 50px;
+}
