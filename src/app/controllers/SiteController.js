@@ -10,9 +10,9 @@ class SiteController {
         .limit(pageSize * 1)
         .skip((page - 1) * pageSize)
         .sort({ price: sort })
-        .then((product) => {
-          let totalProduct = product.length;
-          res.status(200).json({ product, totalProduct });
+        .then((products) => {
+          let totalProduct = products.length;
+          res.status(200).json({ products, totalProduct });
         })
         .catch((err) => res.status(500).json(err));
     } catch (error) {
@@ -82,19 +82,18 @@ class SiteController {
   }
 
   GetProductByCategoryID(req, res, next){
-    console.log(req.body._id);
-    ProductModel.find({ _id: req.body._id })
-      .then((Product) => {
-        if (Product) {
-          return res.status(200).json(Product);
-        } else {
-          return res.status(400).json({ Message: "Lỗi trong lúc lấy danh sách sản phẩm!" });
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-        return res.status(500).json({ Message: "Lỗi trong lúc lấy danh sách sản phẩm!" });
-      });
+    ProductModel.find({ CatalogId: req.body.CatalogId })
+    .then((products) => {
+      if (products.length > 0) {
+        return res.status(200).json(products);
+      } else {
+        return res.status(400).json({ Message: "Không tìm thấy sản phẩm cho loại sản phẩm này!" });
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+      return res.status(500).json({ Message: "Lỗi trong lúc lấy danh sách sản phẩm!" });
+    });
   }
   //#endregion
 
