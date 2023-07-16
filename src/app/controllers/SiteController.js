@@ -1,13 +1,16 @@
 const tb_products = require("../models/tb_products");
 const { mongooseToObject } = require("../../util/mongoose");
 const tb_categorys = require("../models/tb_categorys");
-const tb_payments = require("../models/tb_payments");
+const tb_transactions = require("../models/tb_transactions");
 const tb_users = require("../models/tb_users");
 
 class SiteController {
   //#region API Product
   async GetListProduct(req, res, next) {
-    const { sort, page, pageSize } = req.body;
+    let { sort, page, pageSize } = req.body;
+
+    if(page !== null || page !== undefined) page = 1;
+
     try {
       await tb_products.find()
         .limit(pageSize * 1)
@@ -208,10 +211,10 @@ class SiteController {
 
   //#endregion
 
-  //#region API payment
+  //#region API Transaction
   async GetListTransaction(req, res) {
     try {
-      tb_payments.find().then(v => {
+      tb_transactions.find().then(v => {
         res.status(200).json(v);
       }, (err) => {
         res.status(200).json({"message": "Lỗi trong lúc lấy danh sách phương thức thanh toán!"})
@@ -223,7 +226,7 @@ class SiteController {
 
   async GetTransaction(req, res){
     try {
-      await tb_payments.findById({_id: req.body._id}).then(v => {
+      await tb_transactions.findById({_id: req.body._id}).then(v => {
         res.status(200).json(v)
       }, (err) => {
         res.status(200).json({"message": "Lỗi trong lúc lấy chi tiết phương thức thanh toán!"})
@@ -242,7 +245,7 @@ class SiteController {
         DTOTransaction.UserEmail = user.UserEmail
         DTOTransaction.UserPhone = user.UserPhone
       }
-      const newTransaction = new tb_payments(DTOTransaction);
+      const newTransaction = new tb_transactions(DTOTransaction);
       await newTransaction.save().then(v => {
         res.status(200).json({"message":"Giao dịch thành công!","transaction":v})
       }, (err) => {
