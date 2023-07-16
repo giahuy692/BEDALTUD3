@@ -1,42 +1,70 @@
-[
-  {
-    "Name": "Áo",
-    "Sort_order": 1
+[{
+  "_id": {
+    "$oid": "64b157dee27407f744b4bcf6"
   },
-  {
-    "Name": "Quần",
-    "Sort_order": 2
+  "Name": "Áo",
+  "Sort_order": 1
+},
+{
+  "_id": {
+    "$oid": "64b157dee27407f744b4bcf7"
   },
-  {
-    "Name": "Giày",
-    "Sort_order": 3
+  "Name": "Quần",
+  "Sort_order": 2
+},
+{
+  "_id": {
+    "$oid": "64b157dee27407f744b4bcf8"
   },
-  {
-    "Name": "Phụ kiện",
-    "Sort_order": 4
+  "Name": "Giày",
+  "Sort_order": 3
+},
+{
+  "_id": {
+    "$oid": "64b157dee27407f744b4bcf9"
   },
-  {
-    "Name": "Đồ lót",
-    "Sort_order": 5
+  "Name": "Phụ kiện",
+  "Sort_order": 4
+},
+{
+  "_id": {
+    "$oid": "64b157dee27407f744b4bcfa"
   },
-  {
-    "Name": "Đồ bơi",
-    "Sort_order": 6
+  "Name": "Đồ lót",
+  "Sort_order": 5
+},
+{
+  "_id": {
+    "$oid": "64b157dee27407f744b4bcfb"
   },
-  {
-    "Name": "Váy",
-    "Sort_order": 7
+  "Name": "Đồ bơi",
+  "Sort_order": 6
+},
+{
+  "_id": {
+    "$oid": "64b157dee27407f744b4bcfc"
   },
-  {
-    "Name": "Áo khoác",
-    "Sort_order": 8
+  "Name": "Váy",
+  "Sort_order": 7
+},
+{
+  "_id": {
+    "$oid": "64b157dee27407f744b4bcfd"
   },
-  {
-    "Name": "Đồ mặc nhà",
-    "Sort_order": 9
+  "Name": "Áo khoác",
+  "Sort_order": 8
+},
+{
+  "_id": {
+    "$oid": "64b157dee27407f744b4bcfe"
   },
-  {
-    "Name": "Đồ thể thao",
-    "Sort_order": 10
-  }
-]
+  "Name": "Đồ mặc nhà",
+  "Sort_order": 9
+},
+{
+  "_id": {
+    "$oid": "64b157dee27407f744b4bcff"
+  },
+  "Name": "Đồ thể thao",
+  "Sort_order": 10
+}]
