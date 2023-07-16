@@ -1,0 +1,42 @@
+[
+  {
+    "Name": "Áo",
+    "Sort_order": 1
+  },
+  {
+    "Name": "Quần",
+    "Sort_order": 2
+  },
+  {
+    "Name": "Giày",
+    "Sort_order": 3
+  },
+  {
+    "Name": "Phụ kiện",
+    "Sort_order": 4
+  },
+  {
+    "Name": "Đồ lót",
+    "Sort_order": 5
+  },
+  {
+    "Name": "Đồ bơi",
+    "Sort_order": 6
+  },
+  {
+    "Name": "Váy",
+    "Sort_order": 7
+  },
+  {
+    "Name": "Áo khoác",
+    "Sort_order": 8
+  },
+  {
+    "Name": "Đồ mặc nhà",
+    "Sort_order": 9
+  },
+  {
+    "Name": "Đồ thể thao",
+    "Sort_order": 10
+  }
+]

@@ -1,7 +1,8 @@
-const ProductModel = require("../models/products");
+const ProductModel = require("../models/tb_products");
 const { mongooseToObject } = require("../../util/mongoose");
 
 class SiteController {
+  //#region API Product
   GetListProduct(req, res, next) {
     const { sort, page, pageSize } = req.body;
     try {
@@ -79,6 +80,27 @@ class SiteController {
         return res.status(500).json({ Message: "Lỗi khi xóa sản phẩm!" });
       });
   }
+
+  GetProductByCategoryID(req, res, next){
+    console.log(req.body._id);
+    ProductModel.find({ _id: req.body._id })
+      .then((Product) => {
+        if (Product) {
+          return res.status(200).json(Product);
+        } else {
+          return res.status(400).json({ Message: "Lỗi trong lúc lấy danh sách sản phẩm!" });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        return res.status(500).json({ Message: "Lỗi trong lúc lấy danh sách sản phẩm!" });
+      });
+  }
+  //#endregion
+
+  //#region API
+
+  //#endregion
 }
 
 module.exports = new SiteController();
