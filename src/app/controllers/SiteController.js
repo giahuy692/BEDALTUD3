@@ -60,9 +60,9 @@ class SiteController {
     
   async UpdateProduct(req, res, next) {
     const { _id, ...updateFields } = req.body;
-    if(DTOProduct.CatalogId !== undefined || DTOProduct.CatalogId !== null){
-      const category = await tb_categorys.findById(DTOProduct.CatalogId);
-      DTOProduct.CatalogName = category.Name;
+    if(updateFields.CatalogId !== undefined || updateFields.CatalogId !== null){
+      const category = await tb_categorys.findById(updateFields.CatalogId);
+      updateFields.CatalogName = category.Name;
     }
     try {
       await tb_products.findOneAndUpdate({ _id: req.body._id }, updateFields, {
