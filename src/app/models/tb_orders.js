@@ -6,29 +6,31 @@ const bcrypt = require('bcrypt');
 // Tạo schema cho bảng Orders
 const orderSchema = new mongoose.Schema({
   Transaction_id: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId ,
     ref: 'Transaction',
     required: true
   },
   Product_id: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId ,
     ref: 'Product',
     required: true
   },
   Qty: {
     type: Number,
-    required: true
+    default: null
   },
   Amount: {
     type: Number,
-    required: true
+    default: null
   },
   Data: {
-    type: String
+    type: String,
+    default: null  
   },
   Status: {
     type: String,
-    required: true
+    default: null,
+    default: 'Chờ xử lý'
   }
 },{
   timestamps:true

@@ -6,9 +6,7 @@ const bcrypt = require('bcrypt');
 // Tạo schema cho bảng Banners
 const bannerSchema = new mongoose.Schema({
   title: { type: String, required: true },
-  image: { type: String, required: true },
-  startDate: { type: Date, required: true },
-  endDate: { type: Date, required: true }
+  image: { type: String, default: null}
 });
 
 // Tạo model từ schema

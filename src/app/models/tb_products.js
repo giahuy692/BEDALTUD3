@@ -3,33 +3,41 @@ const Schema = mongoose.Schema;
 
 const Products = new Schema({
   CatalogId: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,default: null,
+
     ref: 'Categorys',
-    required: true
+  },
+  CatalogName: {
+    type: String,default: null,
+
   },
   ProductName: {
-    type: String,
+    type: String ,
     required: true
   },
   Price: {
-    type: Number,
-    required: true
+    type: Number,default: null,
+
   },
   Discount: {
     type: Number,
     default: 0
   },
   Description:{
-    type: String
+    type: String,
+    default: null,
   },
   Quantity:{
-    type: Number,
+    type: Number,default: null,
+
   },
   Image_link: {
-    type: String
+    type: String,
+default: null,
   },
   Image_list: {
-    type: [String]
+    type: [String],
+    default: null,
   }
 },{
   timestamps: true,

@@ -7,34 +7,39 @@ const bcrypt = require('bcrypt');
 const TransactionSchema = new mongoose.Schema({
   Status: {
     type: String,
+    default: null
   },
   UserId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
-    required: true
+    default: null
   },
   UserName: {
     type: String,
-    required: true
+    required: true,
+    default: null
   },
   UserEmail: {
-    type: String,
-    required: true
+    type: String, 
+    required: true,
+    default: null
   },
   UserPhone: {
     type: String,
+    default: null,
     required: true
   },
   Amount: {
     type: Number,
-    required: true
+    default: null
   },
   Payment: {
     type: String,
-    required: true
+    default: null
   },
   Message: {
-    type: String
+    type: String,
+    default: null
   }
 },{
   timestamps:true,

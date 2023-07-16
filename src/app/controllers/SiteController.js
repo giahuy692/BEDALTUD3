@@ -4,10 +4,10 @@ const tb_categorys = require("../models/tb_categorys");
 
 class SiteController {
   //#region API Product
-  GetListProduct(req, res, next) {
+  async GetListProduct(req, res, next) {
     const { sort, page, pageSize } = req.body;
     try {
-      tb_products.find()
+      await tb_products.find()
         .limit(pageSize * 1)
         .skip((page - 1) * pageSize)
         .sort({ price: sort })
@@ -21,9 +21,9 @@ class SiteController {
     }
   }
 
-  GetProduct(req, res, next) {
+  async GetProduct(req, res, next) {
     try {
-      tb_products.findOne({ _id: req.body._id })
+      await tb_products.findOne({ _id: req.body._id })
         .then((product) => {
           if (product !== null || product !== undefined) {
             return res.status(200).json(product);
@@ -36,8 +36,12 @@ class SiteController {
     }
   }
 
-  CreateProduct(req, res, next) {
+  async CreateProduct(req, res, next) {
     let DTOProduct = req.body;
+    if(DTOProduct.CatalogId !== undefined || DTOProduct.CatalogId !== null){
+      const category = await tb_categorys.findById(DTOProduct.CatalogId);
+      DTOProduct.CatalogName = category.Name;
+    } 
     const newProduct = new tb_products(DTOProduct);
     try {
       newProduct
@@ -53,10 +57,15 @@ class SiteController {
     }
   }
 
-  UpdateProduct(req, res, next) {
+    
+  async UpdateProduct(req, res, next) {
     const { _id, ...updateFields } = req.body;
+    if(DTOProduct.CatalogId !== undefined || DTOProduct.CatalogId !== null){
+      const category = await tb_categorys.findById(DTOProduct.CatalogId);
+      DTOProduct.CatalogName = category.Name;
+    }
     try {
-      tb_products.findOneAndUpdate({ _id: req.body._id }, updateFields, {
+      await tb_products.findOneAndUpdate({ _id: req.body._id }, updateFields, {
         new: true,
       })
         .then((updatedProduct) => {
@@ -196,6 +205,8 @@ class SiteController {
   }
 
   //#endregion
+
+  //#region API 
 }
 
 module.exports = new SiteController();

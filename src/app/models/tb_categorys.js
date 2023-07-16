@@ -6,11 +6,12 @@ const Schema = mongoose.Schema;
 const categorySchema = new mongoose.Schema({
   Name: {
     type: String,
-    required: true
+    required: true,
+    default: null
   },
   Sort_order: {
     type: Number,
-    required: true
+    default: null
   }
 },{
   timestamps:true,

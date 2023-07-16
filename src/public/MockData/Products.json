@@ -5,6 +5,7 @@
   "CatalogId": {
     "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Game Device",
   "Price": "22.99",
   "Discount": "19.99",
@@ -16,8 +17,9 @@
     "$oid": "64b3a7005cd5c4bc04e9947e"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcf7"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Truck Machine",
   "Price": "13.95",
   "Discount": "7",
@@ -29,8 +31,9 @@
     "$oid": "64b3a7005cd5c4bc04e9947f"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcf8"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Toy Apparatus",
   "Price": "23.99",
   "Discount": "16.95",
@@ -42,21 +45,26 @@
     "$oid": "64b3a7005cd5c4bc04e99480"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcf9"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Camping Rig",
-  "Price": "46.99",
+  "Price": 30000,
   "Discount": "36.99",
   "Description": "Ut eleifend ultricies est quis imperdiet. Mauris convallis felis at nibh accumsan, faucibus ultricies felis porta. Integer egestas eu odio at porta. In magna sem, tincidunt ultrices efficitur rutrum, facilisis sit amet nibh. Nunc vel efficitur purus. Integer laoreet purus eget enim imperdiet ultrices. Aenean varius nisi in ex mollis euismod.",
-  "Quantity": -21491
+  "Quantity": 62,
+  "updatedAt": {
+    "$date": "2023-07-16T09:45:10.680Z"
+  }
 },
 {
   "_id": {
     "$oid": "64b3a7005cd5c4bc04e99481"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfa"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Tire Widget",
   "Price": "173.95",
   "Discount": "138",
@@ -68,8 +76,9 @@
     "$oid": "64b3a7005cd5c4bc04e99482"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfb"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Furniture Gadget",
   "Price": "170",
   "Discount": "102.95",
@@ -81,8 +90,9 @@
     "$oid": "64b3a7005cd5c4bc04e99483"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfc"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Beach Implement",
   "Price": "61.99",
   "Discount": "42",
@@ -94,8 +104,9 @@
     "$oid": "64b3a7005cd5c4bc04e99484"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfd"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Beach Thingamajig",
   "Price": "165.95",
   "Discount": "115",
@@ -107,8 +118,9 @@
     "$oid": "64b3a7005cd5c4bc04e99485"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Biking Gear",
   "Price": "169.99",
   "Discount": "135",
@@ -120,8 +132,9 @@
     "$oid": "64b3a7005cd5c4bc04e99486"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Bedding Kit",
   "Price": "134",
   "Discount": "107.99",
@@ -133,8 +146,9 @@
     "$oid": "64b3a7005cd5c4bc04e99487"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Dog Device",
   "Price": "146.95",
   "Discount": "116",
@@ -146,8 +160,9 @@
     "$oid": "64b3a7005cd5c4bc04e99488"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Computer Mechanism",
   "Price": "119.99",
   "Discount": "107.99",
@@ -159,8 +174,9 @@
     "$oid": "64b3a7005cd5c4bc04e99489"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Sports Component",
   "Price": "143.99",
   "Discount": "114.95",
@@ -172,8 +188,9 @@
     "$oid": "64b3a7005cd5c4bc04e9948a"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Baby Instrument",
   "Price": "146.95",
   "Discount": "87",
@@ -185,8 +202,9 @@
     "$oid": "64b3a7005cd5c4bc04e9948b"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Cat Widget",
   "Price": "50.99",
   "Discount": "40.95",
@@ -198,8 +216,9 @@
     "$oid": "64b3a7005cd5c4bc04e9948c"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Kids Tool",
   "Price": "187.95",
   "Discount": "112.95",
@@ -211,8 +230,9 @@
     "$oid": "64b3a7005cd5c4bc04e9948d"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Skin Care Doodad",
   "Price": "174.99",
   "Discount": "104.99",
@@ -224,8 +244,9 @@
     "$oid": "64b3a7005cd5c4bc04e9948e"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Vitamin Widget",
   "Price": "170.99",
   "Discount": "153.99",
@@ -263,8 +284,9 @@
     "$oid": "64b3a7005cd5c4bc04e99491"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Nutrition Machine",
   "Price": "149.99",
   "Discount": "104.99",
@@ -276,8 +298,9 @@
     "$oid": "64b3a7005cd5c4bc04e99492"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Computer Tool",
   "Price": "49.95",
   "Discount": "29",
@@ -289,8 +312,9 @@
     "$oid": "64b3a7005cd5c4bc04e99493"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Mens Kit",
   "Price": "169",
   "Discount": "135.99",
@@ -302,8 +326,9 @@
     "$oid": "64b3a7005cd5c4bc04e99494"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Engine Component",
   "Price": "72.95",
   "Discount": "50",
@@ -315,8 +340,9 @@
     "$oid": "64b3a7005cd5c4bc04e99495"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Truck Contraption",
   "Price": "23.99",
   "Discount": "16",
@@ -328,8 +354,9 @@
     "$oid": "64b3a7005cd5c4bc04e99496"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Home Improvement Gizmo",
   "Price": "17",
   "Discount": "11.99",
@@ -341,8 +368,9 @@
     "$oid": "64b3a7005cd5c4bc04e99497"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Jewelry Item",
   "Price": "38.99",
   "Discount": "26.99",
@@ -354,8 +382,9 @@
     "$oid": "64b3a7005cd5c4bc04e99498"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Biking Implement",
   "Price": "146.99",
   "Discount": "102",
@@ -367,8 +396,9 @@
     "$oid": "64b3a7005cd5c4bc04e99499"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Biking Instrument",
   "Price": "112.99",
   "Discount": "100.99",
@@ -380,8 +410,9 @@
     "$oid": "64b3a7005cd5c4bc04e9949a"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf6"
   },
+  "CatalogName": "Áo",
   "ProductName": "Game Supplies",
   "Price": "123.95",
   "Discount": "86",
@@ -393,8 +424,9 @@
     "$oid": "64b3a7005cd5c4bc04e9949b"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Makeup Gizmo",
   "Price": "125.95",
   "Discount": "112.99",
@@ -406,8 +438,9 @@
     "$oid": "64b3a7005cd5c4bc04e9949c"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Biking Item",
   "Price": "38",
   "Discount": "26",
@@ -419,8 +452,9 @@
     "$oid": "64b3a7005cd5c4bc04e9949d"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Camping Doodad",
   "Price": "156.99",
   "Discount": "93.95",
@@ -432,8 +466,9 @@
     "$oid": "64b3a7005cd5c4bc04e9949e"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Personal Accessory",
   "Price": "106.99",
   "Discount": "63.95",
@@ -445,8 +480,9 @@
     "$oid": "64b3a7005cd5c4bc04e9949f"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Aquarium Widget",
   "Price": "68",
   "Discount": "40",
@@ -458,8 +494,9 @@
     "$oid": "64b3a7005cd5c4bc04e994a0"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Computer Device",
   "Price": "192",
   "Discount": "172",
@@ -471,8 +508,9 @@
     "$oid": "64b3a7005cd5c4bc04e994a1"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Makeup Item",
   "Price": "174.95",
   "Discount": "156.99",
@@ -484,8 +522,9 @@
     "$oid": "64b3a7005cd5c4bc04e994a2"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Dog Tool",
   "Price": "164.99",
   "Discount": "147.99",
@@ -497,8 +536,9 @@
     "$oid": "64b3a7005cd5c4bc04e994a3"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Game Gizmo",
   "Price": "99.99",
   "Discount": "89.99",
@@ -509,7 +549,10 @@
   "_id": {
     "$oid": "64b3a7005cd5c4bc04e994a4"
   },
-  "CatalogId": "64b157dee27407f744b4bcfe",
+  "CatalogId": {
+    "$oid": "64b157dee27407f744b4bcf7"
+  },
+  "CatalogName": "Quần",
   "ProductName": "Truck Equipment",
   "Price": "177.95",
   "Discount": "123.99",
@@ -521,8 +564,9 @@
     "$oid": "64b3a7005cd5c4bc04e994a5"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Skin Care Paraphernalia",
   "Price": "171.99",
   "Discount": "102.95",
@@ -534,8 +578,9 @@
     "$oid": "64b3a7005cd5c4bc04e994a6"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Bath Component",
   "Price": "57.99",
   "Discount": "51.99",
@@ -547,8 +592,9 @@
     "$oid": "64b3a7005cd5c4bc04e994a7"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Game Contraption",
   "Price": "117.95",
   "Discount": "105.95",
@@ -560,8 +606,9 @@
     "$oid": "64b3a7005cd5c4bc04e994a8"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Phone Tool",
   "Price": "195.95",
   "Discount": "136.99",
@@ -573,8 +620,9 @@
     "$oid": "64b3a7005cd5c4bc04e994a9"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Jewelry Machine",
   "Price": "91",
   "Discount": "63.95",
@@ -586,8 +634,9 @@
     "$oid": "64b3a7005cd5c4bc04e994aa"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Cooking Apparatus",
   "Price": "31.99",
   "Discount": "18.99",
@@ -599,8 +648,9 @@
     "$oid": "64b3a7005cd5c4bc04e994ab"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Skin Care Implement",
   "Price": "64.99",
   "Discount": "51.99",
@@ -612,8 +662,9 @@
     "$oid": "64b3a7005cd5c4bc04e994ac"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Car Gizmo",
   "Price": "149.99",
   "Discount": "119.99",
@@ -625,8 +676,9 @@
     "$oid": "64b3a7005cd5c4bc04e994ad"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Furniture Supplies",
   "Price": "12.95",
   "Discount": "8.95",
@@ -638,8 +690,9 @@
     "$oid": "64b3a7005cd5c4bc04e994ae"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Mens Rig",
   "Price": "34.95",
   "Discount": "23.99",
@@ -651,8 +704,9 @@
     "$oid": "64b3a7005cd5c4bc04e994af"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Party Tool",
   "Price": "131.99",
   "Discount": "91.95",
@@ -664,8 +718,9 @@
     "$oid": "64b3a7005cd5c4bc04e994b0"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Baby Gadget",
   "Price": "25.99",
   "Discount": "20",
@@ -690,8 +745,9 @@
     "$oid": "64b3a7005cd5c4bc04e994b2"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Toy Instrument",
   "Price": "54.95",
   "Discount": "48.99",
@@ -703,8 +759,9 @@
     "$oid": "64b3a7005cd5c4bc04e994b3"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Computer Gear",
   "Price": "76.99",
   "Discount": "60",
@@ -716,8 +773,9 @@
     "$oid": "64b3a7005cd5c4bc04e994b4"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Toy Instrument",
   "Price": "184.99",
   "Discount": "147.99",
@@ -729,8 +787,9 @@
     "$oid": "64b3a7005cd5c4bc04e994b5"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Car Attachment",
   "Price": "103.95",
   "Discount": "82.99",
@@ -755,8 +814,9 @@
     "$oid": "64b3a7005cd5c4bc04e994b7"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Furniture Item",
   "Price": "14.95",
   "Discount": "9.99",
@@ -768,8 +828,9 @@
     "$oid": "64b3a7005cd5c4bc04e994b8"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcf7"
   },
+  "CatalogName": "Quần",
   "ProductName": "Music Whatchamacallit",
   "Price": "137.99",
   "Discount": "123",
@@ -781,8 +842,9 @@
     "$oid": "64b3a7005cd5c4bc04e994b9"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcfa"
   },
+  "CatalogName": "Đồ lót",
   "ProductName": "Dog Apparatus",
   "Price": "108",
   "Discount": "97.95",
@@ -794,8 +856,9 @@
     "$oid": "64b3a7005cd5c4bc04e994ba"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcfa"
   },
+  "CatalogName": "Đồ lót",
   "ProductName": "Book Contraption",
   "Price": "181.99",
   "Discount": "144",
@@ -807,8 +870,9 @@
     "$oid": "64b3a7005cd5c4bc04e994bb"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcfa"
   },
+  "CatalogName": "Đồ lót",
   "ProductName": "Dining Whatchamacallit",
   "Price": "123.95",
   "Discount": "98.95",
@@ -820,8 +884,9 @@
     "$oid": "64b3a7005cd5c4bc04e994bc"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcfa"
   },
+  "CatalogName": "Đồ lót",
   "ProductName": "Dining Paraphernalia",
   "Price": "187.95",
   "Discount": "149",
@@ -833,8 +898,9 @@
     "$oid": "64b3a7005cd5c4bc04e994bd"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcfa"
   },
+  "CatalogName": "Đồ lót",
   "ProductName": "Bath Kit",
   "Price": "21.99",
   "Discount": "14",
@@ -846,8 +912,9 @@
     "$oid": "64b3a7005cd5c4bc04e994be"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcfa"
   },
+  "CatalogName": "Đồ lót",
   "ProductName": "Camping Gadget",
   "Price": "83",
   "Discount": "74.99",
@@ -872,8 +939,9 @@
     "$oid": "64b3a7005cd5c4bc04e994c0"
   },
   "CatalogId": {
-    "$oid": "64b157dee27407f744b4bcfe"
+    "$oid": "64b157dee27407f744b4bcfa"
   },
+  "CatalogName": "Đồ lót",
   "ProductName": "Technology Rig",
   "Price": "136",
   "Discount": "122.95",

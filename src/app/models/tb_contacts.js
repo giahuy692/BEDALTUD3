@@ -4,11 +4,11 @@ const bcrypt = require('bcrypt');
 
 
 const contactSchema = new mongoose.Schema({
-  FullName: { type: String, required: true },
-  Email: { type: String, required: true },
-  Phone: { type: String, required: true },
-  Message: { type: String, required: true },
-  IsRead: {type: Boolean}
+  FullName: { type: String, required: true, default: null },
+  Email: { type: String, required: true, default: null },
+  Phone: { type: String, required: true, default: null },
+  Message: { type: String, required: true,default: null },
+  IsRead: {type: Boolean, default: false}
 });
 
 // Tạo model từ schema
