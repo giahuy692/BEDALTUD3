@@ -13,5 +13,13 @@ router.post('/DeleteProduct', siteController.DeleteProduct);
 router.post('/GetProductByCategoryID', siteController.GetProductByCategoryID);
 //#endregion
 
+//#region API Category
+router.post('/GetListCategory', siteController.GetListCategory);
+router.post('/GetCategory', siteController.GetCategory);
+router.post('/CreateCategory', siteController.CreateCategory);
+router.post('/UpdateCategory', siteController.UpdateCategory);
+router.post('/DeleteCategory', siteController.DeleteCategory);
+//#endregion 
+
 
 module.exports = router;
