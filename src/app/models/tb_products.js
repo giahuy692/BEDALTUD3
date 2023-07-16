@@ -45,13 +45,16 @@ default: null,
 
 module.exports = mongoose.model('Products', Products);
 
-// id : khóa chính và trường dữ liệu
-// catalog_id: id của danh mục sản phẩm
-// name: tên sản phẩm
-// price: giá sản phẩm
-// discount: lưu chiết khấu, giảm giá
-// price: giá sản phẩm
-// image_link: lưu link file ảnh minh họa
-// image_list: lưu danh sách link file ảnh
-// created: thời điểm tạo sản phẩm
-// view: số lượt xem sản phẩm
+// DTO Product	
+// _id	Khóa chính và trường dữ liệu
+// CatalogId	id của danh mục sản phẩm
+// CatalogName	Tên loại sản phẩm
+// ProductName	Tên sản phẩm
+// Price	giá sản phẩm
+// Discount	lưu chiết khấu, giảm giá
+// Description	Mô tả sản phẩm
+// Quantity	Số lượng sản phẩm
+// Image_link	Ảnh đại diện của sản phẩm
+// Image_list	Ảnh chi tiết của sản phẩm
+// createdAt	Ngày tạo
+// updatedAt	Ngày update

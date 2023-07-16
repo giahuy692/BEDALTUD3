@@ -1,6 +1,8 @@
 const tb_products = require("../models/tb_products");
 const { mongooseToObject } = require("../../util/mongoose");
 const tb_categorys = require("../models/tb_categorys");
+const tb_payments = require("../models/tb_payments");
+const tb_users = require("../models/tb_users");
 
 class SiteController {
   //#region API Product
@@ -17,7 +19,7 @@ class SiteController {
         })
         .catch((err) => res.status(200).json({ Message: "Lỗi trong lúc lấy danh sách loại sản phẩm" }));
     } catch (error) {
-      res.status(500).json(err);
+      res.status(500).json({"message":"Lỗi trong lúc lấy danh sách sản phẩm"});
     }
   }
 
@@ -32,7 +34,7 @@ class SiteController {
           }
         }) 
     } catch (error) {
-      return res.status(500).json(err);
+      return res.status(500).json({"message": "Lỗi trong lúc lấy chi tiết sản phẩm"});
     }
   }
 
@@ -50,10 +52,10 @@ class SiteController {
           return res.status(200).json(product);
         })
         .catch((error) => {
-          return res.status(200).json("Lỗi khi lưu sản phẩm:");
+          return res.status(200).json({"message":"Lỗi khi lưu sản phẩm:"});
         });
     } catch (error) {
-      return res.status(500).json("Lỗi khi lưu sản phẩm:");
+      return res.status(500).json({"message":"Lỗi khi lưu sản phẩm:"});
     }
   }
 
@@ -72,10 +74,10 @@ class SiteController {
           return res.status(200).json(updatedProduct);
         })
         .catch((error) => {
-          return res.status(200).json("Lỗi khi cập nhật sản phẩm:");
+          return res.status(200).json({"message":"Lỗi khi cập nhật sản phẩm:"});
         });
     } catch (error) {
-      return res.status(500).json("Lỗi khi lưu sản phẩm:", error);
+      return res.status(500).json({"message":"Lỗi khi lưu sản phẩm:"});
     }
   }
 
@@ -93,7 +95,7 @@ class SiteController {
         return res.status(200).json({ Message: "Lỗi khi xóa sản phẩm!" });
       });
     } catch (error) {
-      return res.status(500).json("Lỗi khi xóa sản phẩm:", error);
+      return res.status(500).json({"message":"Lỗi khi xóa sản phẩm:"});
     }
     
   }
@@ -162,10 +164,10 @@ class SiteController {
           return res.status(200).json(category);
         })
         .catch((error) => {
-          return res.status(200).json("Lỗi khi lưu sản phẩm:", error);
+          return res.status(200).json({"message":"Lỗi khi lưu sản phẩm:"});
         });
     } catch (error) {
-      return res.status(500).json("Lỗi khi lưu sản phẩm:", error);
+      return res.status(500).json({"message":"Lỗi khi lưu sản phẩm:"});
     }
   } 
 
@@ -179,10 +181,10 @@ class SiteController {
           return res.status(200).json(updatedCategory);
         })
         .catch((error) => {
-          return res.status(200).json("Lỗi khi cập nhật sản phẩm:");
+          return res.status(200).json({"message":"Lỗi khi cập nhật sản phẩm:"});
         });
     } catch (error) {
-      return res.status(500).json("Lỗi khi lưu sản phẩm:", error);
+      return res.status(500).json({"message":"Lỗi khi lưu sản phẩm:"});
     }
   }
 
@@ -200,13 +202,57 @@ class SiteController {
         return res.status(200).json({ Message: "Lỗi khi xóa loại sản phẩm!" });
       });
     } catch (error) {
-      return res.status(500).json("Lỗi khi xóa loại sản phẩm:", error);
+      return res.status(500).json({"message":"Lỗi khi xóa loại sản phẩm:"});
     }
   }
 
   //#endregion
 
-  //#region API 
+  //#region API payment
+  async GetListTransaction(req, res) {
+    try {
+      tb_payments.find().then(v => {
+        res.status(200).json(v);
+      }, (err) => {
+        res.status(200).json({"message": "Lỗi trong lúc lấy danh sách phương thức thanh toán!"})
+      })
+    } catch (error) {
+      res.status(500).json({"message": "Lỗi trong lúc lấy danh sách phương thức thanh toán!"})
+    }
+  }
+
+  async GetTransaction(req, res){
+    try {
+      await tb_payments.findById({_id: req.body._id}).then(v => {
+        res.status(200).json(v)
+      }, (err) => {
+        res.status(200).json({"message": "Lỗi trong lúc lấy chi tiết phương thức thanh toán!"})
+      })
+    } catch (error) {
+      res.status(500).json({"message":"Lỗi trong lúc lấy chi tiết phương thức thanh toán!"})
+    }
+  }
+
+  async CreateTransaction(req,res){
+    let DTOTransaction = req.body;
+    try {
+      if(DTOTransaction.UserId){
+        const user = await tb_users.findOne({_id: DTOTransaction})
+        DTOTransaction.UserName = user.UserName
+        DTOTransaction.UserEmail = user.UserEmail
+        DTOTransaction.UserPhone = user.UserPhone
+      }
+      const newTransaction = new tb_payments(DTOTransaction);
+      await newTransaction.save().then(v => {
+        res.status(200).json({"message":"Giao dịch thành công!","transaction":v})
+      }, (err) => {
+        res.status(200).json({"message":"Lỗi trong lúc giao dịch!"})
+      })
+    } catch (error) {
+      res.status(500).json({"message":"Lỗi trong lúc giao dịch!"})
+    }
+  }
+  //#endregion 
 }
 
 module.exports = new SiteController();

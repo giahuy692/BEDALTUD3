@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const bcrypt = require('bcrypt');
 
 
 // Tạo schema cho bảng Transaction
 const TransactionSchema = new mongoose.Schema({
   Status: {
     type: String,
-    default: null
+    default: null,
+    default: "Chưa thanh toán"
   },
   UserId: {
     type: mongoose.Schema.Types.ObjectId,
@@ -35,7 +35,7 @@ const TransactionSchema = new mongoose.Schema({
   },
   Payment: {
     type: String,
-    default: null
+    default: "Thanh toán sau khi nhận hàng"
   },
   Message: {
     type: String,
@@ -46,7 +46,7 @@ const TransactionSchema = new mongoose.Schema({
 });
 
 // Tạo model từ schema
-module.exports = mongoose.model('Transaction', TransactionSchema);
+module.exports = mongoose.model('Transactions', TransactionSchema);
 
 // id : khóa chính và trường dữ liệu
 // status: lưu trạng thái của giao dịch

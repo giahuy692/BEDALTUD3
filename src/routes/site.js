@@ -21,5 +21,9 @@ router.post('/UpdateCategory', siteController.UpdateCategory);
 router.post('/DeleteCategory', siteController.DeleteCategory);
 //#endregion 
 
+//#region API payment
+router.post('/GetListTransaction', siteController.GetListTransaction);
+router.post('/CreateTransaction', siteController.CreateTransaction);
+//#endregion 
 
 module.exports = router;
