@@ -23,7 +23,10 @@ router.post('/DeleteCategory', siteController.DeleteCategory);
 
 //#region API payment
 router.post('/GetListTransaction', siteController.GetListTransaction);
+router.post('/GetTransaction', siteController.GetTransaction);
 router.post('/CreateTransaction', siteController.CreateTransaction);
+router.post('/UpdateStatusTransaction', siteController.UpdateStatusTransaction);
+router.post('/DeleteTransaction', siteController.DeleteTransaction);
 //#endregion 
 
 module.exports = router;
