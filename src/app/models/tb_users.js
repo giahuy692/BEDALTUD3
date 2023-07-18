@@ -5,13 +5,14 @@ const userSchema = new mongoose.Schema({
   UserName: {
     type: String,
     default:"User",
-    default: null
+    default: null,
+    unique: true,
   },
   Email: {
     type: String,
     required: true,
     unique: true,
-    default: null
+    default: null,
   },
   Password: {
     type: String,
@@ -26,9 +27,9 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: null
   },
-  Role:{
-    type: String,
-    default:"User"
+  isAdmin:{
+    type: Boolean,
+    default: false
   }
 },{
   timestamps: true,

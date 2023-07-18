@@ -29,4 +29,15 @@ router.post('/UpdateStatusTransaction', siteController.UpdateStatusTransaction);
 router.post('/DeleteTransaction', siteController.DeleteTransaction);
 //#endregion 
 
+//#region API Order
+router.post('/GetListOrder', siteController.GetListOrder);
+//#endregion
+
+//#region API Auth
+router.post('/Register', siteController.Register);
+router.post('/Login', siteController.Login);
+router.post('/GetAllUser', siteController.GetAllUser);
+//#endregion
+
+
 module.exports = router;
