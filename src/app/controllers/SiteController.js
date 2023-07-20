@@ -22,7 +22,7 @@ function HandleAccessToken(user) {
   },"secretkey",{expiresIn:"6h"})
 }
 
-function HandleAccessToken(user) {
+function HandleRefreshAccessToken(user) {
   return jwt.sign({
     id:user._id,
     admin: user.admin
@@ -87,9 +87,11 @@ class SiteController {
 
   async CreateProduct(req, res, next) {
     let DTOProduct = req.body;
-    if (DTOProduct.CatalogId !== undefined || DTOProduct.CatalogId !== null) {
-      const category = await tb_categorys.findById(DTOProduct.CatalogId);
-      DTOProduct.CatalogName = category.Name;
+    if (DTOProduct.CatalogId !== undefined && DTOProduct.CatalogId !== null) {
+      const category = await tb_categorys.findById({_id: DTOProduct.CatalogId});
+      if(category !== null || category !== undefined){
+        DTOProduct.CatalogName = category.Name;
+      } 
     }
     const newProduct = new tb_products(DTOProduct);
     try {
@@ -452,13 +454,45 @@ class SiteController {
       }
       if (hasValue(user) & validPassword) {
         const accessToken = HandleAccessToken(user);
-        const refeshToken = HandleAccessToken(user)
+        const refreshToken = HandleRefreshAccessToken(user)
+        res.cookie("refreshToken", refreshToken,{
+          httpOnly:true,
+          secure:false,
+          path:'/',
+          sameSite: "strict",
+        })
+        res.setHeader("Authorization", `Bearer ${accessToken}`);
         const {Password, ...others} = user._doc;
-        return res.status(200).json({others,accessToken,refeshToken});
+        return res.status(200).json(others);
       };
     } catch (error) {
       return res.status(500).json({message:error})
     }
+  }
+
+  async RefreshToken(req, res){
+    const refreshToken = req.cookies.refreshToken;
+    if(!refreshToken) return res.status.json({message: "Bạn chưa được xác thực!"})
+    jwt.verify(refreshToken, 'refeshToken', (err, user) => {
+      if(err){
+        console.log(err);
+      } 
+
+      const newAccessToken = HandleAccessToken(user);
+      const newRefreshAccessToken = HandleRefreshAccessToken(user)
+      res.cookie("refreshToken", newRefreshAccessToken,{
+        httpOnly:true,
+        secure:false,
+        path:'/',
+        sameSite: "strict",
+      })
+      return res.status(200).json({accessToken: newAccessToken})
+    })
+  }
+
+  async Logout(req, res){
+    res.clearCookie("refreshToken");
+    res.status(200).json({message: "Đăng xuất thành công!"})
   }
 
   async GetAllUser(req, res){
