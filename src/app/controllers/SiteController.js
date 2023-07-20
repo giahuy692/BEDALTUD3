@@ -5,6 +5,7 @@ const tb_transactions = require("../models/tb_transactions");
 const tb_users = require("../models/tb_users");
 const tb_orders = require("../models/tb_orders");
 const bcrypt = require("bcrypt");
+const jwt =require("jsonwebtoken");
 
 function hasValue(v){
   if(v !== null || v !== undefined){
@@ -14,6 +15,20 @@ function hasValue(v){
   return false;
 } 
 
+function HandleAccessToken(user) {
+  return jwt.sign({
+    id:user._id,
+    admin: user.admin
+  },"secretkey",{expiresIn:"6h"})
+}
+
+function HandleAccessToken(user) {
+  return jwt.sign({
+    id:user._id,
+    admin: user.admin
+  },"refeshToken",{expiresIn:"30d"})
+}
+
 
 class SiteController {
   
@@ -21,7 +36,7 @@ class SiteController {
   async GetListProduct(req, res, next) {
     let { sort, page, pageSize } = req.body;
 
-    if (page !== null || page !== undefined) page = 1;
+    if (hasValue(page)) page = 1;
 
     try {
       await tb_products
@@ -58,6 +73,15 @@ class SiteController {
       return res
         .status(500)
         .json({ Message: error});
+    }
+  }
+
+  async FindProduct(req , res){
+    try {
+      const products = await tb_products.find({ProductName: { $regex: req.body.ProductName, $options: 'i' }});
+      return res.status(200).json(products);
+    } catch (error) {
+      return res.status(500).json(error);
     }
   }
 
@@ -265,16 +289,16 @@ class SiteController {
     try {
       tb_transactions.find().then(
         (v) => {
-          res.status(200).json(v);
+          return res.status(200).json(v);
         },
         (err) => {
-          res.status(200).json({
+          return res.status(200).json({
             Message: "Lỗi trong lúc lấy danh sách giao dịch!",
           });
         }
       );
     } catch (error) {
-      res.status(500).json({
+      return res.status(500).json({
         Message: error,
       });
     }
@@ -285,19 +309,19 @@ class SiteController {
       await tb_transactions.findById({ _id: req.body._id }).then(
         (v) => {
           if (v) {
-            res.status(200).json(v);
+            return res.status(200).json(v);
           } else {
-            res.status(200).json({ Message: "Sản phẩm không tồn tại!" });
+            return res.status(200).json({ Message: "Sản phẩm không tồn tại!" });
           }
         },
         (err) => {
-          res.status(200).json({
+          return res.status(200).json({
             Message: "Lỗi trong lúc lấy chi tiết giao dịch!",
           });
         }
       );
     } catch (error) {
-      res.status(500).json({
+      return res.status(500).json({
         Message: error,
       });
     }
@@ -317,16 +341,16 @@ class SiteController {
       const newTransaction = new tb_transactions(DTOTransaction);
       await newTransaction.save().then(
         (v) => {
-          res
+          return res
             .status(200)
             .json({ Message: "Giao dịch thành công!", transaction: v });
         },
         (err) => {
-          res.status(200).json({ Message: "Lỗi trong lúc giao dịch!" });
+          return res.status(200).json({ Message: "Lỗi trong lúc giao dịch!" });
         }
       );
     } catch (error) {
-      res.status(500).json(error);
+      return res.status(500).json(error);
     }
   }
 
@@ -417,18 +441,21 @@ class SiteController {
     try {
       const user = await tb_users.findOne({Email: req.body.Email});
       if (!user) {
-        res.status(404).json({message:"Email chính xác!"})
+        return res.status(404).json({message:"Email không chính xác!"})
       }
       const validPassword = await bcrypt.compare(
         req.body.Password,
         user.Password
       );
       if(!validPassword){
-        res.status(404).json({message:"Mật khẩu không chính xác!"})
+        return res.status(404).json({message:"Mật khẩu không chính xác!"})
       }
       if (hasValue(user) & validPassword) {
-        res.status(200).json(user);
-      }
+        const accessToken = HandleAccessToken(user);
+        const refeshToken = HandleAccessToken(user)
+        const {Password, ...others} = user._doc;
+        return res.status(200).json({others,accessToken,refeshToken});
+      };
     } catch (error) {
       return res.status(500).json({message:error})
     }
@@ -438,15 +465,75 @@ class SiteController {
     try {
       const user = await tb_users.find();
       let total = user.length
-      console.log(user);
-      res.status(200).json({user,total})
+      return res.status(200).json({user,total});
     } catch (error) {
-      res.status(500).json({message: error})
+      return res.status(500).json(error);
+    }
+  }
+
+  async GetUser(req, res){
+    try {
+      const user = await tb_users.findById({_id: req.body._id});
+      return res.status(200).json(user);
+    } catch (error) {
+      return res.status(500).json(error);
+    }
+  }
+
+  async FindUser(req , res){
+    try {
+      const users = await tb_users.find({UserName: { $regex: req.body.UserName, $options: 'i' }});
+      return res.status(200).json(users);
+    } catch (error) {
+      return res.status(500).json(error);
+    }
+  }
+
+  async UpdateUser(req, res){
+    try {
+      const { _id, ...updateFields } = req.body;
+  
+      // Kiểm tra xem người dùng có tồn tại hay không
+      const user = await tb_users.findById(_id);
+      if (!user) {
+        return res.status(404).json({ message: "Người dùng không tồn tại" });
+      }
+
+      
+  
+      // Kiểm tra xem người dùng muốn thay đổi mật khẩu hay không
+      if (updateFields.password) {
+        // Mã hóa mật khẩu mới
+        const hashedPassword = await bcrypt.hash(updateFields.password, 10);
+        updateFields.Password = hashedPassword;
+      }
+  
+      // Lưu thông tin người dùng đã được cập nhật
+      const newUser = await tb_users.findOneAndUpdate({ _id: req.body._id }, updateFields, {
+        new: true,
+      })
+  
+      return res.status(200).json(newUser);
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json(error);
+    }
+  }
+
+  async DeleteUser(req, res){
+    try {
+      let user = await tb_users.findByIdAndDelete({_id: req.body._id});
+      if(user){
+        return res.status(200).json({message: "Xóa user thành công!"});
+      } else {
+        return res.status(200).json({message: "User không tồn tại!"});
+      }
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json(error);
     }
   }
   //#endregion
-
-
 }
 
 module.exports = new SiteController();
