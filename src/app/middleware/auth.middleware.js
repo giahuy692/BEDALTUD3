@@ -2,8 +2,8 @@ const jwt = require("jsonwebtoken");
 
 const authMiddleware = {
     verifyToken : (req, res, next) => {
-        let token = req.headers;
-        console.log(token);
+        let token = req.body.token || req.query.token || req.headers['token'] || req.headers.token;
+        console.log(req.body.token, req.query.token, req.headers['token'], req.headers.token, req.headers);
         if(token){
             const accessToken = token.split(" ")[1];
             jwt.verify(accessToken, 'secretkey',(err, user) => {

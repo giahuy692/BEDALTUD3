@@ -9,18 +9,18 @@ const siteController = require('../app/controllers/SiteController');
 router.post('/GetListProduct', siteController.GetListProduct);
 router.post('/GetProduct', siteController.GetProduct);
 router.post('/FindProduct', siteController.FindProduct);
-router.post('/CreateProduct', siteController.CreateProduct);
-router.post('/UpdateProduct', siteController.UpdateProduct);
-router.post('/DeleteProduct', siteController.DeleteProduct);
 router.post('/GetProductByCategoryID', siteController.GetProductByCategoryID);
+router.post('/CreateProduct', middleware.verifyToken, siteController.CreateProduct);
+router.post('/UpdateProduct', middleware.verifyToken, siteController.UpdateProduct);
+router.post('/DeleteProduct', middleware.verifyToken, siteController.DeleteProduct);
 //#endregion
 
 //#region API Category
 router.post('/GetListCategory', siteController.GetListCategory);
 router.post('/GetCategory', siteController.GetCategory);
-router.post('/CreateCategory', siteController.CreateCategory);
-router.post('/UpdateCategory', siteController.UpdateCategory);
-router.post('/DeleteCategory', siteController.DeleteCategory);
+router.post('/CreateCategory', middleware.verifyToken, siteController.CreateCategory);
+router.post('/UpdateCategory', middleware.verifyToken, siteController.UpdateCategory);
+router.post('/DeleteCategory', middleware.verifyToken, siteController.DeleteCategory);
 //#endregion 
 
 //#region API payment
@@ -32,7 +32,11 @@ router.post('/DeleteTransaction', middleware.verifyToken, siteController.DeleteT
 //#endregion 
 
 //#region API Order
-router.post('/GetListOrder', siteController.GetListOrder);
+router.post('/GetListOrder',siteController.GetListOrder);
+router.post('/UpdateOrder', middleware.verifyToken,siteController.UpdateOrder);
+router.post('/DeleteOrder', middleware.verifyToken,siteController.DeleteOrder);
+router.post('/GetOrder',siteController.GetOrder);
+router.post('/CreateOrder', middleware.verifyToken,siteController.CreateOrder);
 //#endregion
 
 //#region API Auth

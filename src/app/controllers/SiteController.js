@@ -411,6 +411,84 @@ class SiteController {
       return res.status(500).json(error);
     }
   }
+
+  async CreateOrder(req, res) {
+    let DTOOrder = req.body;
+    try {
+      const newOrder = new tb_orders(DTOOrder);
+      await newOrder.save().then(
+        (v) => {
+          return res
+            .status(200)
+            .json({ Message: "Giao dịch thành công!", ObjectResult: v });
+        },
+        (err) => {
+          return res.status(200).json({ Message: "Lỗi trong lúc tạo đơn hàng!" });
+        }
+      );
+    } catch (error) {
+      return res.status(500).json(error);
+    }
+  }
+
+  async UpdateOrder(req, res) {
+    let { _id, ...updateFields } = req.body;
+    try {
+      tb_orders
+        .findOneAndUpdate({ _id: req.body._id }, updateFields, {
+          new: true,
+        })
+        .then((updatedOrder) => {
+          return res.status(200).json(updatedOrder);
+        })
+        .catch((error) => {
+          return res
+            .status(200)
+            .json({ Message: "Lỗi khi cập nhật đơn hàng" });
+        });
+    } catch (error) {
+      return res.status(500).json(error);
+    }
+  }
+
+  async GetOrder(req, res) {
+    try {
+      await tb_orders.findById({ _id: req.body._id }).then(
+        (v) => {
+          if (v) {
+            return res.status(200).json(v);
+          } else {
+            return res.status(200).json({ Message: "Đơn hàng không tồn tại!" });
+          }
+        },
+        (err) => {
+          return res.status(200).json({
+            Message: "Lỗi trong lúc lấy chi tiết đơn hàng!",
+          });
+        }
+      );
+    } catch (error) {
+      return res.status(500).json({
+        Message: error,
+      });
+    }
+  }
+
+  async DeleteOrder(req, res) {
+    try {
+      let detele = await tb_orders.deleteOne({ _id: req.body._id });
+      if (detele) {
+        return res.status(200).json({ Message: "Xóa đơn hàng thành công!" });
+      } else {
+        return res
+          .status(200)
+          .json({ Message: "Xóa đơn hàng không thành công!" });
+      }
+    } catch (error) {
+      return res.status(500).json(error);
+    }
+  }
+
   //#endregion 
   
   //#region API Auth
@@ -461,9 +539,9 @@ class SiteController {
           path:'/',
           sameSite: "strict",
         })
-        res.setHeader("Authorization", `Bearer ${accessToken}`);
+        res.setHeader("token", `Bearer ${accessToken}`);
         const {Password, ...others} = user._doc;
-        return res.status(200).json(others);
+        return res.status(200).json({others, accessToken});
       };
     } catch (error) {
       return res.status(500).json({message:error})
