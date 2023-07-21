@@ -18,14 +18,16 @@ function hasValue(v){
 function HandleAccessToken(user) {
   return jwt.sign({
     id:user._id,
-    admin: user.admin
+    UserName: user.UserName,
+    Email: user.Email
   },"secretkey",{expiresIn:"6h"})
 }
 
 function HandleRefreshAccessToken(user) {
   return jwt.sign({
     id:user._id,
-    admin: user.admin
+    UserName: user.UserName,
+    Email: user.Email
   },"refeshToken",{expiresIn:"30d"})
 }
 
