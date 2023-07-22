@@ -1,0 +1,216 @@
+[{
+  "_id": {
+    "$oid": "64b571610ee5899daa1336ff"
+  },
+  "UserName": "Giahuy",
+  "Email": "giahuy@gmail.com",
+  "Password": "123",
+  "Address": "Go Vap",
+  "Phone": "0777869002",
+  "isAdmin": false,
+  "createdAt": {
+    "$date": "2023-07-17T16:50:41.733Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-17T16:50:41.733Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b68489cad11ba51183e9fe"
+  },
+  "UserName": "Giahuy1",
+  "Email": "giahuy1@gmail.com",
+  "Password": "123",
+  "Address": "Go Vap",
+  "Phone": "0777869002",
+  "isAdmin": false,
+  "createdAt": {
+    "$date": "2023-07-18T12:24:41.691Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T12:24:41.691Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b688ec5e5f5bb1d454eb50"
+  },
+  "UserName": "Giahuy2",
+  "Email": "giahuy2@gmail.com",
+  "Password": "$2b$10$a0o1urU0jFqHqDq6ja0rFuF88d22.P4m7lQ7EznqUNk9X5h6/A0Um",
+  "Address": "Go Vap",
+  "Phone": "0777869002",
+  "isAdmin": false,
+  "createdAt": {
+    "$date": "2023-07-18T12:43:24.364Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T12:43:24.364Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6923c57c89d89f4be2f8b"
+  },
+  "UserName": "averagespace",
+  "Email": "admin5@ymail.com",
+  "Password": "$2b$10$E3C0GqSrJGsQdNU5QBxRDOtdhP6glucLj828MWbSt2bSTXqVz342e",
+  "Address": "33 Liberty Street",
+  "Phone": "323-929-6503",
+  "isAdmin": true,
+  "createdAt": {
+    "$date": "2023-07-18T13:23:08.819Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T13:23:08.819Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6925e57c89d89f4be2f8f"
+  },
+  "UserName": "magentarange",
+  "Email": "admin@gmail.com",
+  "Password": "$2b$10$/bhTn3O.jXVYe0evjbci4.SttimRKYjRDNTG308xXr/KC1MGsykpS",
+  "Address": "77 1st Avenue",
+  "Phone": "904-997-1462",
+  "isAdmin": true,
+  "createdAt": {
+    "$date": "2023-07-18T13:23:42.257Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T13:23:42.257Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6927457c89d89f4be2f91"
+  },
+  "UserName": "elitewriting",
+  "Email": "laurawright@ymail.com",
+  "Password": "$2b$10$JpJLGar93HQTxaTCKBW8HOtvIuCwxX.i2yzDKCGav1ACfeieekEOe",
+  "Address": "654 8th Street",
+  "Phone": "843-495-2627",
+  "isAdmin": false,
+  "createdAt": {
+    "$date": "2023-07-18T13:24:04.403Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T13:24:04.403Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6928257c89d89f4be2f93"
+  },
+  "UserName": "stickywhistle",
+  "Email": "tbennett@outlook.com",
+  "Password": "$2b$10$WqAih6QCqHTNqqx8lTD2/u5wjqrRFB9fdPs5Ekf0I3r./rEpfHVHu",
+  "Address": "12 Grove Street",
+  "Phone": "747-777-8711",
+  "isAdmin": false,
+  "createdAt": {
+    "$date": "2023-07-18T13:24:18.106Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T13:24:18.106Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b6929457c89d89f4be2f95"
+  },
+  "UserName": "hurriedpin",
+  "Email": "p.evans@rocketmail.com",
+  "Password": "$2b$10$22SvEErJkptd2ubDofJ.f.P3N3YncX0LB2UxWY60hhSHcT6RUvLpe",
+  "Address": "95 Heather Lane",
+  "Phone": "351-735-3238",
+  "isAdmin": false,
+  "createdAt": {
+    "$date": "2023-07-18T13:24:36.591Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T13:24:36.591Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b692a157c89d89f4be2f97"
+  },
+  "UserName": "incandescentrange",
+  "Email": "brianna.i.campbell4@outlook.com",
+  "Password": "$2b$10$BnJqAELclKBUUjXJsVzVYuTWk93Rb2P9jtxc3QUZ9mYQjxVMuCHaa",
+  "Address": "93 5th Street",
+  "Phone": "909-281-6348",
+  "isAdmin": false,
+  "createdAt": {
+    "$date": "2023-07-18T13:24:49.244Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T13:24:49.244Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b692b957c89d89f4be2f9b"
+  },
+  "UserName": "nicecat",
+  "Email": "nicolemarie@aol.com",
+  "Password": "$2b$10$ltV/3lXwR5DY2JY6P0aEiOOwdJOB/qoRBIdiDLl2hbJnnZ6Kxt9/K",
+  "Address": "55336 Elm Street",
+  "Phone": "661-763-5333",
+  "isAdmin": false,
+  "createdAt": {
+    "$date": "2023-07-18T13:25:13.196Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T13:25:13.196Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b692c557c89d89f4be2f9d"
+  },
+  "UserName": "irateliquid",
+  "Email": "th@yahoo.com",
+  "Password": "$2b$10$1MVYK61bmNjqAdDdnBUCYe3ldCGpwFalUNjNeUBYOCoSQFUMfwuwS",
+  "Address": "8113 Church Street",
+  "Phone": "219-955-0147",
+  "isAdmin": false,
+  "createdAt": {
+    "$date": "2023-07-18T13:25:25.193Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T13:25:25.193Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64b692d257c89d89f4be2f9f"
+  },
+  "UserName": "powerfulvessel",
+  "Email": "alyssagonzales19@ymail.com",
+  "Password": "$2b$10$BmwPYcz27VEvaer/bYf2zutbQxTjJtjjH5SvCwWTQvAFKhVe/W5xi",
+  "Address": "85936 Lafayette Avenue",
+  "Phone": "239-333-2317",
+  "isAdmin": false,
+  "createdAt": {
+    "$date": "2023-07-18T13:25:38.452Z"
+  },
+  "updatedAt": {
+    "$date": "2023-07-18T13:25:38.452Z"
+  },
+  "__v": 0
+}]

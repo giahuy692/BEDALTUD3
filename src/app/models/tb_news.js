@@ -7,7 +7,7 @@ const newsSchema = new mongoose.Schema({
   title: { type: String, required: true },
   content: { type: String ,default: null },
   publishDate: { type: Date, default: null }
-});
+},{timestamps: true});
 
 // Tạo model từ schema
 module.exports = mongoose.model('News', newsSchema);

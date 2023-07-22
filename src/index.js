@@ -7,6 +7,8 @@ const port = 3000;
 const route = require('./routes');
 const db = require('./app/config/db');
 const bodyParser = require('body-parser')
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
 
 db.connect();
 app.use(express.static(path.join(__dirname, 'public')));
@@ -14,6 +16,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // parse various different custom JSON types as JSON
 app.use(bodyParser.json({ type: 'application/*+json' }))
+app.use(cors());
+app.use(cookieParser());
+
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200'); // Thay thế bằng tên miền Angular của bạn

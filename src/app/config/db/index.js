@@ -6,7 +6,7 @@ async function connect() {
   try {
     await mongoose.connect('mongodb://127.0.0.1:27017/store').then(() => console.log('Đã kết nối thành công!'));
   } catch (error) {
-    console.log('Đã kết nối thành công!');
+    console.log('Đã kết nối server thành công!');
   }
 }
 
