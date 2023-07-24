@@ -17,7 +17,7 @@ const authMiddleware = {
         }
     },
 
-    verifyTokenAndAdminAuth:(req, res) => {
+    verifyTokenAndAdminAuth:(req, res,next) => {
         authMiddleware.verifyToken(req, res, () => {
             if(req.user.id == req.body.id || req.user.admin){
                 next();
