@@ -16,19 +16,13 @@ function hasValue(v){
 } 
 
 function HandleAccessToken(user) {
-  return jwt.sign({
-    id:user._id,
-    UserName: user.UserName,
-    Email: user.Email
-  },"secretkey",{expiresIn:"6h"})
+  const {Password, ...NewUser} = user._doc
+  return jwt.sign(NewUser,"secretkey",{expiresIn:"12h"})
 }
 
 function HandleRefreshAccessToken(user) {
-  return jwt.sign({
-    id:user._id,
-    UserName: user.UserName,
-    Email: user.Email
-  },"refeshToken",{expiresIn:"30d"})
+  const {password, ...NewUser} = user
+  // return jwt.sign(NewUser,"refeshToken",{expiresIn:"30d"})
 }
 
 
@@ -512,7 +506,7 @@ class SiteController {
         const user = await newUser.save();
         return res.status(200).json(user);
       } else {
-        return res.status(200).json({message:"Field repeat password/ password không khớp nhau!"});
+        return res.status(200).json({message:"Field repeat password/password do not match!"});
       }
     } catch (error) { 
       return res.status(500).json({message:error})

@@ -42,6 +42,7 @@ router.post('/CreateOrder', middleware.verifyToken,siteController.CreateOrder);
 //#region API Auth
 router.post('/Register', siteController.Register);
 router.post('/Login', siteController.Login);
+router.post('/Logout', siteController.Logout);
 router.post('/RefreshToken', siteController.RefreshToken);
 router.post('/GetAllUser', middleware.verifyToken, siteController.GetAllUser);
 router.post('/GetUser', middleware.verifyToken, siteController.GetUser);

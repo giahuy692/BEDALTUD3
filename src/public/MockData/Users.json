@@ -2,9 +2,9 @@
   "_id": {
     "$oid": "64b571610ee5899daa1336ff"
   },
-  "UserName": "Giahuy",
+  "UserName": "Đỗ Gia Huy",
   "Email": "giahuy@gmail.com",
-  "Password": "123",
+  "Password": "$2b$10$iUc/QYTuctBNQaqx3qv55eCU30z2E8w7Xo0Asvl/VZz6Qx.6RVD8a",
   "Address": "Go Vap",
   "Phone": "0777869002",
   "isAdmin": false,
@@ -12,43 +12,7 @@
     "$date": "2023-07-17T16:50:41.733Z"
   },
   "updatedAt": {
-    "$date": "2023-07-17T16:50:41.733Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "64b68489cad11ba51183e9fe"
-  },
-  "UserName": "Giahuy1",
-  "Email": "giahuy1@gmail.com",
-  "Password": "123",
-  "Address": "Go Vap",
-  "Phone": "0777869002",
-  "isAdmin": false,
-  "createdAt": {
-    "$date": "2023-07-18T12:24:41.691Z"
-  },
-  "updatedAt": {
-    "$date": "2023-07-18T12:24:41.691Z"
-  },
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "64b688ec5e5f5bb1d454eb50"
-  },
-  "UserName": "Giahuy2",
-  "Email": "giahuy2@gmail.com",
-  "Password": "$2b$10$a0o1urU0jFqHqDq6ja0rFuF88d22.P4m7lQ7EznqUNk9X5h6/A0Um",
-  "Address": "Go Vap",
-  "Phone": "0777869002",
-  "isAdmin": false,
-  "createdAt": {
-    "$date": "2023-07-18T12:43:24.364Z"
-  },
-  "updatedAt": {
-    "$date": "2023-07-18T12:43:24.364Z"
+    "$date": "2023-07-18T15:11:18.286Z"
   },
   "__v": 0
 },
@@ -198,19 +162,19 @@
 },
 {
   "_id": {
-    "$oid": "64b692d257c89d89f4be2f9f"
+    "$oid": "64b6a82235c33dda5060407b"
   },
   "UserName": "powerfulvessel",
   "Email": "alyssagonzales19@ymail.com",
-  "Password": "$2b$10$BmwPYcz27VEvaer/bYf2zutbQxTjJtjjH5SvCwWTQvAFKhVe/W5xi",
+  "Password": "$2b$10$4fjQVK7UxYCOJSPn.UPIF.cjtWNs5vbzBhIt6VhocF/GvuBMLR7ui",
   "Address": "85936 Lafayette Avenue",
   "Phone": "239-333-2317",
   "isAdmin": false,
   "createdAt": {
-    "$date": "2023-07-18T13:25:38.452Z"
+    "$date": "2023-07-18T14:56:34.614Z"
   },
   "updatedAt": {
-    "$date": "2023-07-18T13:25:38.452Z"
+    "$date": "2023-07-18T14:56:34.614Z"
   },
   "__v": 0
 }]
