@@ -47,7 +47,7 @@ class SiteController {
         .catch((err) =>
           res
             .status(200)
-            .json({ Message: "Lỗi trong lúc lấy danh sách loại sản phẩm" })
+            .json({ Message: "Error while retrieving product type list" })
         );
     } catch (error) {
       res.status(500).json({ Message: error});
@@ -62,7 +62,7 @@ class SiteController {
         } else {
           return res
             .status(200)
-            .json({ Message: "Lỗi trong lúc lấy chi tiết sản phẩm" });
+            .json({ Message: "Error while retrieving product details" });
         }
       });
     } catch (error) {
@@ -97,7 +97,7 @@ class SiteController {
           return res.status(200).json(product);
         })
         .catch((error) => {
-          return res.status(200).json({ Message: "Lỗi khi lưu sản phẩm:" });
+          return res.status(200).json({ Message: "Error while saving product" });
         });
     } catch (error) {
       return res.status(500).json({ Message:error});
@@ -124,7 +124,7 @@ class SiteController {
         .catch((error) => {
           return res
             .status(200)
-            .json({ Message: "Lỗi khi cập nhật sản phẩm:" });
+            .json({ Message: "Error when updating product" });
         });
     } catch (error) {
       return res.status(500).json({ Message: error});
@@ -139,13 +139,13 @@ class SiteController {
           if (removedProduct) {
             return res
               .status(200)
-              .json({ Message: "Xóa sản phẩm thành công!" });
+              .json({ Message: "Product deletion successful!" });
           } else {
-            return res.status(200).json({ Message: "Sản phẩm không tồn tại!" });
+            return res.status(200).json({ Message: "Product does not exist!" });
           }
         })
         .catch((error) => {
-          return res.status(200).json({ Message: "Lỗi khi xóa sản phẩm!" });
+          return res.status(200).json({ Message: "Error deleting product!" });
         });
     } catch (error) {
       return res.status(500).json({ Message: error });
@@ -161,14 +161,14 @@ class SiteController {
             return res.status(200).json(products);
           } else {
             return res.status(200).json({
-              Message: "Không tìm thấy sản phẩm cho loại sản phẩm này!",
+              Message: "No products found for this product type!",
             });
           }
         })
         .catch((error) => {
           console.log(error);
           return res.status(200).json({
-            Message: "Lỗi trong lúc lấy danh sách sản phẩm theo loại sản phẩm!",
+            Message: "Error while retrieving product list by product type!",
           });
         });
     } catch (error) {
@@ -190,7 +190,7 @@ class SiteController {
         } else {
           return res
             .status(200)
-            .json({ Message: "Lỗi trong lúc lấy danh sách loại sản phẩm!" });
+            .json({ Message: "Error while retrieving product list by product type!" });
         }
       });
     } catch (error) {
@@ -208,7 +208,7 @@ class SiteController {
         } else {
           return res
             .status(200)
-            .json({ Message: "Lỗi trong lúc lấy chi tiết loại sản phẩm" });
+            .json({ Message: "Error while getting product type details" });
         }
       });
     } catch (error) {
@@ -228,7 +228,7 @@ class SiteController {
           return res.status(200).json(category);
         })
         .catch((error) => {
-          return res.status(200).json({ Message: "Lỗi khi lưu sản phẩm:" });
+          return res.status(200).json({ Message: "Error while saving product" });
         });
     } catch (error) {
       return res.status(500).json({ Message:error });
@@ -248,7 +248,7 @@ class SiteController {
         .catch((error) => {
           return res
             .status(200)
-            .json({ Message: "Lỗi khi cập nhật sản phẩm:" });
+            .json({ Message: "Error when updating product" });
         });
     } catch (error) {
       return res.status(500).json({ Message: error});
@@ -263,17 +263,17 @@ class SiteController {
           if (removedCategory) {
             return res
               .status(200)
-              .json({ Message: "Xóa loại sản phẩm thành công!" });
+              .json({ Message: "Delete product type successfully!" });
           } else {
             return res
               .status(200)
-              .json({ Message: "Sản loại phẩm không tồn tại!" });
+              .json({ Message: "Product category does not exist!" });
           }
         })
         .catch((error) => {
           return res
             .status(200)
-            .json({ Message: "Lỗi khi xóa loại sản phẩm!" });
+            .json({ Message: "Error when deleting product type!" });
         });
     } catch (error) {
       return res.status(500).json({ Message: error });
@@ -291,7 +291,7 @@ class SiteController {
         },
         (err) => {
           return res.status(200).json({
-            Message: "Lỗi trong lúc lấy danh sách giao dịch!",
+            Message: "Error while retrieving transaction list!",
           });
         }
       );
@@ -309,12 +309,12 @@ class SiteController {
           if (v) {
             return res.status(200).json(v);
           } else {
-            return res.status(200).json({ Message: "Sản phẩm không tồn tại!" });
+            return res.status(200).json({ Message: "Product does not exist!" });
           }
         },
         (err) => {
           return res.status(200).json({
-            Message: "Lỗi trong lúc lấy chi tiết giao dịch!",
+            Message: "Error while retrieving transaction details!",
           });
         }
       );
@@ -341,10 +341,10 @@ class SiteController {
         (v) => {
           return res
             .status(200)
-            .json({ Message: "Giao dịch thành công!", transaction: v });
+            .json({ Message: "Successful transaction!", transaction: v });
         },
         (err) => {
-          return res.status(200).json({ Message: "Lỗi trong lúc giao dịch!" });
+          return res.status(200).json({ Message: "Error in transaction!" });
         }
       );
     } catch (error) {
@@ -375,7 +375,7 @@ class SiteController {
         .catch((error) => {
           return res
             .status(200)
-            .json({ Message: "Lỗi khi cập nhật giao dịch" });
+            .json({ Message: "Error updating transaction" });
         });
     } catch (error) {
       return res.status(500).json(error);
@@ -386,11 +386,11 @@ class SiteController {
     try {
       let detele = await tb_transactions.deleteOne({ _id: req.body._id });
       if (detele) {
-        return res.status(200).json({ Message: "Xóa giao dịch thành công!" });
+        return res.status(200).json({ Message: "Delete transaction successfully!" });
       } else {
         return res
           .status(200)
-          .json({ Message: "Xóa giao dịch không thành công!" });
+          .json({ Message: "Delete failed transaction!" });
       }
     } catch (error) {
       return res.status(500).json(error);
@@ -416,10 +416,10 @@ class SiteController {
         (v) => {
           return res
             .status(200)
-            .json({ Message: "Giao dịch thành công!", ObjectResult: v });
+            .json({ Message: "Successful transaction!", ObjectResult: v });
         },
         (err) => {
-          return res.status(200).json({ Message: "Lỗi trong lúc tạo đơn hàng!" });
+          return res.status(200).json({ Message: "Error while creating order!" });
         }
       );
     } catch (error) {
@@ -440,7 +440,7 @@ class SiteController {
         .catch((error) => {
           return res
             .status(200)
-            .json({ Message: "Lỗi khi cập nhật đơn hàng" });
+            .json({ Message: "Error updating order" });
         });
     } catch (error) {
       return res.status(500).json(error);
@@ -454,12 +454,12 @@ class SiteController {
           if (v) {
             return res.status(200).json(v);
           } else {
-            return res.status(200).json({ Message: "Đơn hàng không tồn tại!" });
+            return res.status(200).json({ Message: "Error updating order!" });
           }
         },
         (err) => {
           return res.status(200).json({
-            Message: "Lỗi trong lúc lấy chi tiết đơn hàng!",
+            Message: "Error while retrieving order details!",
           });
         }
       );
@@ -474,11 +474,11 @@ class SiteController {
     try {
       let detele = await tb_orders.deleteOne({ _id: req.body._id });
       if (detele) {
-        return res.status(200).json({ Message: "Xóa đơn hàng thành công!" });
+        return res.status(200).json({ Message: "Deleted order successfully!" });
       } else {
         return res
           .status(200)
-          .json({ Message: "Xóa đơn hàng không thành công!" });
+          .json({ Message: "Delete failed order!" });
       }
     } catch (error) {
       return res.status(500).json(error);
@@ -517,14 +517,14 @@ class SiteController {
     try {
       const user = await tb_users.findOne({Email: req.body.Email});
       if (!user) {
-        return res.status(404).json({message:"Email không chính xác!"})
+        return res.status(404).json({message:"Email is incorrect!"})
       }
       const validPassword = await bcrypt.compare(
         req.body.Password,
         user.Password
       );
       if(!validPassword){
-        return res.status(404).json({message:"Mật khẩu không chính xác!"})
+        return res.status(404).json({message:"Incorrect password!"})
       }
       if (hasValue(user) & validPassword) {
         const accessToken = HandleAccessToken(user);
@@ -546,7 +546,7 @@ class SiteController {
 
   async RefreshToken(req, res){
     const refreshToken = req.cookies.refreshToken;
-    if(!refreshToken) return res.status.json({message: "Bạn chưa được xác thực!"})
+    if(!refreshToken) return res.status.json({message: "You are not authenticated!"})
     jwt.verify(refreshToken, 'refeshToken', (err, user) => {
       if(err){
         console.log(err);
@@ -566,7 +566,7 @@ class SiteController {
 
   async Logout(req, res){
     res.clearCookie("refreshToken");
-    res.status(200).json({message: "Đăng xuất thành công!"})
+    res.status(200).json({message: "Sign out successful!"})
   }
 
   async GetAllUser(req, res){
@@ -604,15 +604,15 @@ class SiteController {
       // Kiểm tra xem người dùng có tồn tại hay không
       const user = await tb_users.findById(_id);
       if (!user) {
-        return res.status(404).json({ message: "Người dùng không tồn tại" });
+        return res.status(404).json({ message: "User does not exist" });
       }
 
       
   
       // Kiểm tra xem người dùng muốn thay đổi mật khẩu hay không
-      if (updateFields.password) {
+      if (updateFields.Password) {
         // Mã hóa mật khẩu mới
-        const hashedPassword = await bcrypt.hash(updateFields.password, 10);
+        const hashedPassword = await bcrypt.hash(updateFields.Password, 10);
         updateFields.Password = hashedPassword;
       }
   
@@ -632,9 +632,9 @@ class SiteController {
     try {
       let user = await tb_users.findByIdAndDelete({_id: req.body._id});
       if(user){
-        return res.status(200).json({message: "Xóa user thành công!"});
+        return res.status(200).json({message: "Delete user successfully!"});
       } else {
-        return res.status(200).json({message: "User không tồn tại!"});
+        return res.status(200).json({message: "User does not exist!"});
       }
     } catch (error) {
       console.log(error);
